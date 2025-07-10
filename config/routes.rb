@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   localized do
-    root to: 'cars#index'
+    root to: "cars#index"
 
-    resources :cars, only: [:index, :show]
+    resources :cars, only: [ :index, :show ]
   end
 end
