@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :car do
     car_model
+    code { SecureRandom.alphanumeric(8) }
     color { "MyString" }
     license_plate { "MyString" }
     city { "MyString" }
