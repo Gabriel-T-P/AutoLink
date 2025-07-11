@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.2"
+gem "route_translator", "~> 15.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
@@ -53,6 +54,8 @@ group :development, :test do
 
   gem "factory_bot_rails", "~> 6.5"
 
+  gem "faker", "~> 3.5"
+
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
@@ -60,5 +63,3 @@ group :development, :test do
 
   gem "simplecov", "~> 0.22.0", require: false
 end
-
-gem "route_translator", "~> 15.2"
