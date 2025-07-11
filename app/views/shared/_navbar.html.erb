@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <%= link_to root_path, class: "navbar-brand d-flex align-items-center gap-2" do %>
+      <%= image_tag "AutoLink_Logo.png", alt: "AutoLink", height: 32, class: "d-inline-block" %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to t('.cars'), cars_path, class: 'nav-link' %>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= I18n.locale == :'pt-BR' ? "Português" : "English" %>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+            <li><%= link_to "Português", url_for(locale: 'pt-BR'), hreflang: 'pt-BR', rel: 'alternate', class: "dropdown-item" %></li>
+            <li><%= link_to "English", url_for(locale: 'en'), hreflang: 'en', rel: 'alternate', class: "dropdown-item" %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
