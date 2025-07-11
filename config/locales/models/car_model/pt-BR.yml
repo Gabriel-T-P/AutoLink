@@ -14,3 +14,13 @@ pt-BR:
         transmission: Câmbio
         doors_number: N° de portas
         engine: Motor
+        fuel_types:
+          gasoline: Gasolina
+          diesel: Diesel
+          electric: Elétrico
+          ethanol: Ethanol
+          flex: Flex
+        transmissions:
+          manual: Manual
+          automatic: Automático
+          semi_automatic: Semi-Automático

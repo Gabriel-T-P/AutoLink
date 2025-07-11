@@ -9,8 +9,16 @@ en:
         brand: Brand
         name: Name
         car_category: Car Category
-        fuel_type: Fuel Type
         year: Year
-        transmission: Transmission
         doors_number: Number of Doors
         engine: Engine
+        fuel_types:
+          gasoline: Gasoline
+          diesel: Diesel
+          electric: Electric
+          ethanol: Ethanol
+          flex: Flex
+        transmissions:
+          manual: Manual
+          automatic: Automatic
+          semi_automatic: Semi-Automatic

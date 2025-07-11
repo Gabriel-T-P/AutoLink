@@ -1,4 +1,11 @@
 en:
   cars:
     index:
-      title: New Vehicles
+      title: New vehicles per brand
+    car_banner:
+      banner_1:
+        title: Find the car of your dreams
+        subtitle: An impecable selection for who want the best
+      banner_2:
+        title: Your next journey begins here
+        subtitle: Confort, security and technology for your family

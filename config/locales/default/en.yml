@@ -29,3 +29,9 @@
 
 en:
   hello: "Hello world"
+  color:
+    white: White
+    black: Black
+    silver: Silver
+    gray: Gray
+    red: Red

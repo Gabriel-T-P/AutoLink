@@ -1,4 +1,11 @@
 pt-BR:
   cars:
     index:
-      title: Novos Veículos
+      title: Novos veículos por marca
+    car_banner:
+      banner_1:
+        title: Encontre o carro dos seus sonhos
+        subtitle: Uma seleção impecável para quem busca o melhor
+      banner_2:
+        title: Sua próxima jornada é aqui
+        subtitle: Conforto, segurança e tecnologia para sua família

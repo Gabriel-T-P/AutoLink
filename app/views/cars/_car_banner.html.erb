@@ -1,0 +1,33 @@
+<div class="container py-4">
+  <div id="mainBannerCarousel" class="carousel slide carousel-fade mb-5 shadow-lg rounded-10" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner rounded-3">
+      <div class="carousel-item active">
+        <%= image_tag "banner_car_1.jpg", class: "d-block w-100 auto-link-banner-image", alt: "Carro Esportivo de Luxo" %>
+        <div class="carousel-caption d-none d-md-block text-start">
+          <h5 class="display-4 fw-bold text-white"><%= t('.banner_1.title') %></h5>
+          <p class="lead text-white-50"><%= t('.banner_1.subtitle') %></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "banner_car_2.jpeg", class: "d-block w-100 auto-link-banner-image", alt: "Carro Familiar Moderno" %>
+        <div class="carousel-caption d-none d-md-block text-end">
+          <h5 class="display-4 fw-bold text-white"><%= t('.banner_2.title') %></h5>
+          <p class="lead text-white-50"><%= t('.banner_2.subtitle') %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainBannerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#mainBannerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainBannerCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainBannerCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
+  </div>
