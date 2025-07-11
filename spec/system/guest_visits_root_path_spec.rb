@@ -6,6 +6,7 @@ describe 'guest visits root path', type: :system do
 
     within 'nav' do
       expect(page).to have_link 'Cars', href: cars_path
+      expect(page).to have_link 'Contact Us', href: 'https://wa.me/5599999999999'
       expect(page).to have_link 'English'
       expect(page).to have_link 'Português'
     end
