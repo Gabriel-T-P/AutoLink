@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    models:
+      car:
+        one: Car
+        other: Cars
+    attributes:
+      car:
+        color: Color
+        license_plate: License Plate
+        city: City
+        state: State
+        mileage: Mileage
+        price: Price
+        fabricated_at: Fabricated At
+        code: Code

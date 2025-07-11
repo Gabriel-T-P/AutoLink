@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    models:
+      car_model:
+        one: Car Model
+        other: Car Models
+    attributes:
+      car_model:
+        brand: Brand
+        name: Name
+        car_category: Car Category
+        fuel_type: Fuel Type
+        year: Year
+        transmission: Transmission
+        doors_number: Number of Doors
+        engine: Engine

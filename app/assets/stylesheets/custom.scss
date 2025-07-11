@@ -1,0 +1,167 @@
+/* app/assets/stylesheets/custom.css */
+
+/* --- Estilos para o Carrossel (já definidos, mas revisados) --- */
+.carousel-inner {
+  background-color: #f0f2f5;
+  /* Um cinza claro e moderno */
+  border: 1px solid #e0e4eb;
+  /* Borda mais suave */
+  border-radius: 0.75rem;
+  /* Cantos mais arredondados */
+  overflow: hidden;
+  /* Garante que os cantos arredondados funcionem bem com as imagens */
+}
+
+.carousel-item {
+  padding: 1.5rem;
+  /* Espaçamento interno um pouco maior */
+}
+
+/* Ajustes para as setas de navegação */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 6%;
+  /* Largura maior para facilitar o clique */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0));
+  /* Efeito de gradiente mais sutil */
+  opacity: 0.9;
+  transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.carousel-control-next {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0));
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.03));
+}
+
+.carousel-control-next:hover {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.03));
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+  /* Sombra para as setas */
+  font-size: 2.2rem;
+  /* Seta um pouco maior */
+  color: #fff;
+  /* Cor branca para as setas para maior contraste */
+}
+
+/* Indicadores */
+.carousel-indicators [data-bs-target] {
+  background-color: #6c757d;
+  /* Cor cinza para as bolinhas */
+  opacity: 0.7;
+}
+
+.carousel-indicators .active {
+  background-color: #0d6efd;
+  /* Cor primária para a bolinha ativa */
+  opacity: 1;
+}
+
+/* --- Estilos para o Card do Carro (Partial) --- */
+.auto-link-car-card {
+  border: none;
+  /* Remove a borda padrão do card */
+  border-radius: 0.75rem;
+  /* Cantos mais arredondados */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  /* Sombra mais elegante */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+  /* Garante que a imagem e os cantos arredondados funcionem */
+  background-color: #ffffff;
+  /* Fundo branco puro */
+  height: 100%;
+  /* Essencial para alinhar altura em flexbox */
+}
+
+.auto-link-car-card:hover {
+  transform: translateY(-0.5rem);
+  /* Efeito de "levantar" mais notável */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  /* Sombra mais intensa no hover */
+}
+
+.auto-link-car-image {
+  width: 100%;
+  height: 200px;
+  /* Altura fixa para a imagem */
+  object-fit: cover;
+  /* Garante que a imagem preencha sem distorcer */
+  border-top-left-radius: 0.75rem;
+  /* Arredonda só o topo */
+  border-top-right-radius: 0.75rem;
+  /* Arredonda só o topo */
+}
+
+.auto-link-no-image {
+  height: 200px;
+  /* Mesma altura da imagem para consistência */
+  background-color: #e9ecef;
+  /* Cinza claro para o placeholder */
+  color: #6c757d;
+  /* Texto em cinza escuro */
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
+.card-body {
+  padding: 1.25rem;
+  /* Espaçamento interno do corpo do card */
+}
+
+.card-title {
+  font-size: 1.3rem;
+  /* Título um pouco maior */
+  margin-bottom: 0.25rem;
+  /* Menos espaço abaixo do título */
+  color: #343a40;
+  /* Cor escura para o título */
+}
+
+small.text-muted {
+  font-size: 0.85rem;
+  /* Fonte um pouco menor para os detalhes finos */
+  text-transform: capitalize;
+  /* Garante que engine, transmission e fuel type fiquem bonitos */
+}
+
+.auto-link-price {
+  color: #28a745;
+  /* Verde vibrante para o preço */
+  margin-top: 10px;
+  /* Espaço acima do preço */
+  margin-bottom: 10px;
+  /* Espaço abaixo do preço */
+  font-weight: 700;
+  /* Mais negrito */
+}
+
+.border-top {
+  border-color: #e9ecef !important;
+  /* Cor da borda superior */
+}
+
+.border-top.pt-2 {
+  padding-top: 0.75rem !important;
+  /* Aumenta um pouco o padding superior */
+}
+
+.text-muted.small span {
+  white-space: nowrap;
+  /* Evita que os detalhes quebrem em várias linhas */
+}
+
+.text-muted.small i {
+  color: #0d6efd;
+  /* Ícones na cor primária do Bootstrap */
+}

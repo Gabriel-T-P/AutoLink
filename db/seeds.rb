@@ -1,13 +1,3 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-
 puts 'Cleaning database...'
 Car.destroy_all
 CarModel.destroy_all
@@ -53,9 +43,11 @@ end
 
 puts 'Creating cars...'
 
+test_image_path = Rails.root.join('db/seeds/sample_image_full.jpg')
+
 CarModel.all.each do |model|
   3.times do
-    Car.create!(
+    car = Car.create!(
       car_model: model,
       color: %w[Black White Silver Gray Red].sample,
       license_plate: Faker::Vehicle.license_plate,
@@ -63,10 +55,17 @@ CarModel.all.each do |model|
       state: Faker::Address.state_abbr,
       mileage: rand(5_000..80_000),
       price: rand(40_000..150_000),
-      fabricated_at: rand(2..5).years.ago,
+      fabricated_at: rand(1..3).years.ago,
       code: SecureRandom.alphanumeric(8).upcase
     )
+
+    3.times do
+      car.images.attach(
+        io: File.open(test_image_path),
+        filename: 'sample-image-full.png'
+      )
+    end
   end
 end
 
-puts 'Seed finished successfully'
+puts 'Seeds finished successfully'

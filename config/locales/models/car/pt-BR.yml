@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      car:
+        one: Carro
+        other: Carros
+    attributes:
+      car:
+        color: Cor
+        license_plate: Placa
+        city: Cidade
+        state: Estado
+        mileage: Quilometragem
+        price: Preço
+        fabricated_at: Fabricação
+        code: Código

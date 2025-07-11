@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      car_model:
+        one: Modelo de Carro
+        other: Modelo de Carros
+    attributes:
+      car_model:
+        brand: Marca
+        name: Nome
+        car_category: Categoria
+        fuel_type: Combustível
+        year: Ano
+        transmission: Câmbio
+        doors_number: N° de portas
+        engine: Motor
