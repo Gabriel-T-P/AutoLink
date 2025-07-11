@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top auto-link-navbar">
   <div class="container">
     <%= link_to root_path, class: "navbar-brand d-flex align-items-center gap-2" do %>
-      <%= image_tag "AutoLink_Logo.png", alt: "AutoLink", height: 32, class: "d-inline-block" %>
+      <%= image_tag "AutoLink_Logo.png", alt: "AutoLink", height: 36, class: "d-inline-block auto-link-logo" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,14 +10,26 @@
 
     <div class="collapse navbar-collapse" id="navbarMain">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <%= link_to cars_path, class: 'nav-link d-flex align-items-center gap-1' do %>
-          <i class="bi bi-car-front-fill"></i> <%= t('.cars') %>
-        <% end %>
+        <li class="nav-item">
+          <%= link_to cars_path, class: 'nav-link d-flex align-items-center gap-1 fw-semibold' do %>
+            <i class="bi bi-car-front-fill"></i> <%= t('.cars') %>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to root_path, class: 'nav-link d-flex align-items-center gap-1 fw-semibold' do %>
+            <i class="bi bi-1-circle"></i></i> Test
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to root_path, class: 'nav-link d-flex align-items-center gap-1 fw-semibold' do %>
+            <i class="bi bi-2-circle"></i></i> Test
+          <% end %>
+        </li>
       </ul>
 
       <ul class="navbar-nav align-items-center gap-2">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <%# Adicionado d-flex align-items-center gap-1 %>
             <i class="bi bi-globe-americas"></i>
             <%= I18n.locale == :'pt-BR' ? "Português" : "English" %>
           </a>
@@ -28,7 +40,7 @@
         </li>
 
         <li class="nav-item">
-          <%= link_to "https://wa.me/5599999999999", target: "_blank", rel: "noopener", class: "btn btn-success btn-sm d-flex align-items-center gap-1" do %>
+          <%= link_to "https://wa.me/5599999999999", target: "_blank", rel: "noopener", class: "btn btn-success btn-sm d-flex align-items-center gap-1 fw-semibold" do %> <%# Adicionado fw-semibold %>
             <i class="bi bi-whatsapp"></i> <%= t('.contact_us') %>
           <% end %>
         </li>

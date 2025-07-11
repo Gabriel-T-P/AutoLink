@@ -1,0 +1,62 @@
+.auto-link-horizontal-scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #0d6efd #f8f9fa;
+}
+
+.auto-link-horizontal-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.auto-link-horizontal-scroll-container::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.auto-link-horizontal-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #0d6efd;
+  border-radius: 10px;
+  border: 2px solid #f8f9fa;
+}
+
+.auto-link-scroll-track {
+  padding-left: 15px;
+  padding-right: 15px;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+.auto-link-scroll-item {
+  /* Se precisar de mais controle no espaçamento, você pode usar padding aqui */
+  /* padding-right: 1rem; */
+  /* Exemplo: espaçamento à direita de cada item */
+}
+
+@media (max-width: 575.98px) {
+
+  .auto-link-scroll-item {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+  .auto-link-scroll-item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  .auto-link-scroll-item {
+    width: 33.333333%;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .auto-link-scroll-item {
+    width: 25%;
+  }
+}
