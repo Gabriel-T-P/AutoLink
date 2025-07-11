@@ -1,0 +1,5 @@
+class AddSellerToCars < ActiveRecord::Migration[8.0]
+  def change
+    add_reference :cars, :seller, null: false, foreign_key: true
+  end
+end

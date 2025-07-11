@@ -1,6 +1,15 @@
 puts 'Cleaning database...'
 Car.destroy_all
 CarModel.destroy_all
+Seller.destroy_all
+
+puts 'Creating sellers...'
+
+sellers = [
+  Seller.create!(name: 'AutoLink - Campus', phone_number: '(11) 91234-5678'),
+  Seller.create!(name: 'AutoLink - Maranhão', phone_number: '(98) 98765-4321'),
+  Seller.create!(name: 'AutoLink - Curitiba', phone_number: '(41) 92345-6789')
+]
 
 puts 'Creating car models...'
 
@@ -49,6 +58,7 @@ CarModel.all.each do |model|
   3.times do
     car = Car.create!(
       car_model: model,
+      seller: sellers.sample,
       color: %w[Black White Silver Gray Red].sample,
       license_plate: Faker::Vehicle.license_plate,
       city: Faker::Address.city,
@@ -62,7 +72,7 @@ CarModel.all.each do |model|
     3.times do
       car.images.attach(
         io: File.open(test_image_path),
-        filename: 'sample-image-full.png'
+        filename: 'sample-image-full.jpg'
       )
     end
   end
