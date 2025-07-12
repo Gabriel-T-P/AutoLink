@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models:
+      contact_message:
+        one: Message
+        other: Messages
+    attributes:
+      contact_message:
+        name: Name
+        phone_number: Phone
+        message: Message
+        seller_id: Sellers

@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      contact_message:
+        one: Mensagem
+        other: Mensagens
+    attributes:
+      contact_message:
+        name: Nome
+        phone_number: Nº de telefone
+        message: Mensagem
+        seller_id: Vendedores

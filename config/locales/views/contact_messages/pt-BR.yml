@@ -1,0 +1,20 @@
+pt-BR:
+  contact_messages:
+    new:
+      title: Entre em Contato
+      subtitle: Preencha o formulário abaixo para falar com um de nossos vendedores. Em breve retornaremos o contato
+    form:
+      save: Enviar Mensagem
+      cancel: Cancelar
+      error:
+        title: Erro ao enviar mensagem
+        subtitle: Por favor, corrija os seguintes problemas
+        name: Por favor, informe seu nome
+        phone: Por favor, informe seu número de telefone
+        message: Por favor, digite sua mensagem
+        seller: Por favor, selecione um vendedor
+      placeholder:
+        name: Seu nome completo
+        message: Sua mensagem (ex.. Tenho interesse no carro X, ou gostaria de mais informações sobre o processo de compra)
+        seller: Selecione um vendedor
+

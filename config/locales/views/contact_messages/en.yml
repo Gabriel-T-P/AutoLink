@@ -1,0 +1,19 @@
+en:
+  contact_messages:
+    new:
+      title: Contact Us
+      subtitle: Fill out the form below to speak with one of our sales representatives. We'll get back to you shortly
+    form:
+      save: Send Message
+      cancel: Cancel
+      error:
+        title: Failed to send the message
+        subtitle: Please, fix the following problems
+        name: Please, tell us your name
+        phone: Please, tell us your phone number
+        message: Please, leave us a message
+        seller: Please, select a seller
+      placeholder:
+        name: Your full name
+        message: Your message (e.g. I'm interested in car X, or I'd like more information about the purchasing process)
+        seller: Select a seller
