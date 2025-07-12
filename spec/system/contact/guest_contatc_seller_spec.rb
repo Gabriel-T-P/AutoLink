@@ -15,13 +15,13 @@ describe 'Guest contact seller', type: :system do
 
   it 'by leaving a message in the app' do
     seller = create(:seller, name: 'AutoLink - GR', phone_number: '+55 (99) 999999999')
-    
+
     visit root_path
     within 'nav' do
       click_on 'Message Us'
     end
     fill_in 'Name', with: 'Name Test'
-    fill_in 'Phone Number', with: '11911111111'
+    fill_in 'Phone', with: '11911111111'
     fill_in 'Message', with: 'Really nice car'
     select 'AutoLink - GR', from: 'Sellers'
     click_on 'Send'
