@@ -2,4 +2,6 @@ en:
   shared:
     navbar:
       cars: Cars
+    contact_us_button:
       contact_us: Contact Us
+      talk_to_seller: Sellers

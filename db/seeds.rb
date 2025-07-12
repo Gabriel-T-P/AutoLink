@@ -6,9 +6,9 @@ Seller.destroy_all
 puts 'Creating sellers...'
 
 sellers = [
-  Seller.create!(name: 'AutoLink - Campus', phone_number: '(11) 91234-5678'),
-  Seller.create!(name: 'AutoLink - Maranhão', phone_number: '(98) 98765-4321'),
-  Seller.create!(name: 'AutoLink - Curitiba', phone_number: '(41) 92345-6789')
+  Seller.create!(name: 'AutoLink - Campus', phone_number: '+55 (11) 91234-5678'),
+  Seller.create!(name: 'AutoLink - Maranhão', phone_number: '+55 (98) 98765-4321'),
+  Seller.create!(name: 'AutoLink - Curitiba', phone_number: '+55 (41) 92345-6789')
 ]
 
 puts 'Creating car models...'

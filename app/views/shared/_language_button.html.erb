@@ -1,0 +1,8 @@
+<a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <%# Adicionado d-flex align-items-center gap-1 %>
+  <i class="bi bi-globe-americas"></i>
+  <%= I18n.locale == :'pt-BR' ? "Português" : "English" %>
+</a>
+<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+  <li><%= link_to "Português", url_for(locale: 'pt-BR'), hreflang: 'pt-BR', rel: 'alternate', class: "dropdown-item" %></li>
+  <li><%= link_to "English", url_for(locale: 'en'), hreflang: 'en', rel: 'alternate', class: "dropdown-item" %></li>
+</ul>

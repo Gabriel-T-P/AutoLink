@@ -1,0 +1,14 @@
+<a class="btn btn-success btn-sm d-flex align-items-center gap-1 fw-semibold dropdown-toggle"
+    href="#" id="whatsappDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="bi bi-whatsapp"></i> <%= t('.contact_us') %>
+</a>
+<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="whatsappDropdown">
+  <h6 class="dropdown-header"><%= t('.talk_to_seller') %>:</h6>
+  <% available_sellers.each do |seller| %>
+    <li>
+      <%= link_to "https://wa.me/#{seller.phone_number.gsub(/[^0-9]/, '')}", target: "_blank", rel: "noopener", class: "dropdown-item d-flex align-items-center gap-2" do %>
+        <i class="bi bi-person-fill"></i> <%= seller.name %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

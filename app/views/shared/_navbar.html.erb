@@ -29,20 +29,11 @@
 
       <ul class="navbar-nav align-items-center gap-2">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <%# Adicionado d-flex align-items-center gap-1 %>
-            <i class="bi bi-globe-americas"></i>
-            <%= I18n.locale == :'pt-BR' ? "Português" : "English" %>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
-            <li><%= link_to "Português", url_for(locale: 'pt-BR'), hreflang: 'pt-BR', rel: 'alternate', class: "dropdown-item" %></li>
-            <li><%= link_to "English", url_for(locale: 'en'), hreflang: 'en', rel: 'alternate', class: "dropdown-item" %></li>
-          </ul>
+          <%= render 'shared/language_button' %>
         </li>
 
-        <li class="nav-item">
-          <%= link_to "https://wa.me/5599999999999", target: "_blank", rel: "noopener", class: "btn btn-success btn-sm d-flex align-items-center gap-1 fw-semibold" do %> <%# Adicionado fw-semibold %>
-            <i class="bi bi-whatsapp"></i> <%= t('.contact_us') %>
-          <% end %>
+        <li class="nav-item dropdown">
+          <%= render 'shared/contact_us_button' %>
         </li>
       </ul>
     </div>
