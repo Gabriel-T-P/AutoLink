@@ -10,3 +10,6 @@ pt-BR:
         phone_number: Nº de telefone
         message: Mensagem
         seller_id: Vendedores
+    errors:
+      messages:
+        invalid_phone_format: deve estar no formato (XX) XXXXX-XXXX ou (XX) XXXX-XXXX

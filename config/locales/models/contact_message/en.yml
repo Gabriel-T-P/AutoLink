@@ -10,3 +10,6 @@ en:
         phone_number: Phone
         message: Message
         seller_id: Sellers
+    errors:
+      messages:
+        invalid_phone_format: must be in the format (XX) XXXXX-XXXX or (XX) XXXX-XXXX
