@@ -29,4 +29,8 @@ describe 'Guest contact seller', type: :system do
     expect(current_path).to eq root_path
     expect(page).to have_content 'Message sent with success'
   end
+
+  it 'and view errors messages in the form' do
+    
+  end
 end

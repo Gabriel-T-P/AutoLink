@@ -3,6 +3,8 @@ en:
     new:
       title: Contact Us
       subtitle: Fill out the form below to speak with one of our sales representatives. We'll get back to you shortly
+    create:
+      success: Message sent with success
     form:
       save: Send Message
       cancel: Cancel

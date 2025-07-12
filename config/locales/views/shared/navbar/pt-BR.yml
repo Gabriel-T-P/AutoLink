@@ -1,7 +1,8 @@
 pt-BR:
   shared:
     navbar:
-      cars: Carros
-      message_us: Fale Conosco
-    contact_us_button:
-      talk_to_seller: Vendedores
+      navbar:
+        cars: Carros
+        message_us: Fale Conosco
+      contact_us_button:
+        talk_to_seller: Vendedores
