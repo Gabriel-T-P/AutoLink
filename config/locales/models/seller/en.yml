@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      seller:
+        one: Seller
+        other: Sellers
+    attributes:
+      seller:
+        name: Name
+        phone_number: Phone Number

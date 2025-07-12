@@ -3,6 +3,8 @@ en:
     index:
       title: New vehicles per brand
       no_cars_registered: No cars registered yet
+    show:
+      engine_subtitle: Engine and Transmission Specifications
     car_banner:
       banner_1:
         title: Find the car of your dreams

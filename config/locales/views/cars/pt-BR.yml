@@ -3,6 +3,8 @@ pt-BR:
     index:
       title: Novos veículos por marca
       no_cars_registered: Nenhum carro registrado ainda
+    show: 
+      engine_subtitle: Especificações do Motor e Transmissão
     car_banner:
       banner_1:
         title: Encontre o carro dos seus sonhos

@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      seller:
+        one: Vendedor
+        other: Vendedores
+    attributes:
+      seller:
+        name: Nome
+        phone_number: Nº de telefone

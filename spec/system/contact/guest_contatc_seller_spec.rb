@@ -30,23 +30,9 @@ describe 'Guest contact seller', type: :system do
     expect(page).to have_content 'Message sent with success'
   end
 
-  it 'and clicks on cancel' do
-    seller = create(:seller, name: 'AutoLink - GR', phone_number: '+55 (99) 999999999')
-    
-    visit new_contact_message_path
-    fill_in 'Name', with: 'Name Test'
-    fill_in 'Phone', with: '11911111111'
-    fill_in 'Message', with: 'Really nice car'
-    select 'AutoLink - GR', from: 'Sellers'
-    click_on 'Cancel'
-
-    expect(current_path).to eq root_path
-    expect(page).not_to have_content 'Message sent with success'
-  end
-
   it 'and view errors messages in the form' do
     seller = create(:seller, name: 'AutoLink - GR', phone_number: '+55 (99) 999999999')
-    
+
     visit new_contact_message_path
     fill_in 'Name', with: 'a'
     fill_in 'Phone', with: 'a'

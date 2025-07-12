@@ -1,0 +1,86 @@
+<div class="container py-4">
+  <div class="row">
+    <div class="col-lg-8 mb-4">
+      <div class="card shadow-lg rounded-3 border-0">
+        <% if @car.images.attached? %>
+          <div id="carImagesCarousel" class="carousel slide carousel-fade rounded-top-3" data-bs-ride="carousel">
+            <div class="carousel-inner rounded-top-3">
+              <% @car.images.each_with_index do |image, index| %>
+                <div class="carousel-item <%= 'active' if index == 0 %>">
+                  <%= image_tag image, class: "d-block w-100 auto-link-car-detail-image", alt: "#{@car.car_model.brand} #{@car.car_model.name} Image #{index + 1}" %>
+                </div>
+              <% end %>
+            </div>
+            <% if @car.images.count > 1 %>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carImagesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carImagesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+              </button>
+            <% end %>
+          </div>
+        <% else %>
+          <%= image_tag "AutoLink_Logo_2.png", class: "card-img-top auto-link-car-detail-image rounded-top-3" %>
+        <% end %>
+
+        <div class="card-body p-4">
+          <h1 class="card-title display-5 fw-bold text-primary mb-3"><%= @car.car_model.brand %> <%= @car.car_model.name %> (<%= @car.car_model.year.year %>)</h1>
+
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <p class="fs-5 mb-1"><i class="bi bi-geo-alt-fill text-muted me-2"></i><%= @car.city %>, <%= @car.state %></p>
+              <p class="fs-5 mb-1"><i class="bi bi-palette-fill text-muted me-2"></i><%= I18n.t("color.#{@car.color.downcase}") %></p>
+              <p class="fs-5 mb-1"><i class="bi bi-clipboard-check-fill text-muted me-2"></i> <%= Car.human_attribute_name :license_plate %>: XXX-<%= @car.license_plate.last(3) %></p>
+            </div>
+            <div class="col-md-6">
+              <p class="fs-5 mb-1"><i class="bi bi-speedometer2 text-muted me-2"></i><%= number_to_currency(@car.mileage, precision: 0, separator: ".", delimiter: ".", unit: "", format: "%n Km") %></p>
+              <p class="fs-5 mb-1"><i class="bi bi-car-front-fill text-muted me-2"></i><%= @car.car_model.car_category.titleize %></p>
+              <p class="fs-5 mb-1"><i class="bi bi-calendar-check-fill text-muted me-2"></i><%= Car.human_attribute_name :fabricated_at %>: <%= l(@car.fabricated_at.to_date, format: :long) %></p>
+            </div>
+          </div>
+
+          <hr class="mb-4">
+
+          <h3 class="fw-bold mb-3"><%= t('.engine_subtitle') %>:</h3>
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <p class="fs-5 mb-1"><i class="bi bi-fuel-pump-fill text-muted me-2"></i><%= CarModel.human_attribute_name :fuel_type %>: <%= CarModel.human_enum_name(:fuel_type, @car.car_model.fuel_type) %></p>
+              <p class="fs-5 mb-1"><i class="bi bi-align-bottom text-muted me-2"></i><%= CarModel.human_attribute_name :transmission %>: <%= CarModel.human_enum_name(:transmission, @car.car_model.transmission) %></p>
+            </div>
+            <div class="col-md-6">
+              <p class="fs-5 mb-1"><i class="bi bi-gear-fill text-muted me-2"></i><%= CarModel.human_attribute_name :engine %>: <%= @car.car_model.engine %></p>
+              <p class="fs-5 mb-1"><i class="bi bi-door-open-fill text-muted me-2"></i><%= CarModel.human_attribute_name :doors_number %>: <%= @car.car_model.doors_number %></p>
+            </div>
+          </div>
+
+          <hr class="mb-4">
+
+          <div class="d-flex flex-column flex-md-row justify-content-around align-items-md-center align-items-start mb-3">
+            <div class="mb-2 mb-md-0">
+              <p class="display-6 fw-bold text-success mb-0">
+                <%= number_to_currency(@car.price) %>
+              </p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-person-circle fs-4 text-muted"></i>
+              <span class="fs-5 fw-semibold text-secondary"><%= Seller.model_name.human %>: <%= @car.seller.name %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 mb-4">
+      <div class="card shadow-lg rounded-3 border-0 sticky" style="top: 80px;">
+        <div class="card-body p-4">
+          <h4 class="card-title text-center mb-4">Interessado neste carro?</h4>
+          <p class="text-center text-muted mb-4">Preencha o formulário para receber mais informações ou agendar um test drive.</p>
+          <%= render 'contact_messages/form', contact_message: @contact_message, sellers: @sellers %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
