@@ -4,7 +4,11 @@ pt-BR:
       title: Novos veículos por marca
       no_cars_registered: Nenhum carro registrado ainda
     show: 
+      car_not_found: Carro não encontrado.
       engine_subtitle: Especificações do Motor e Transmissão
+      form:
+        title: Interessado neste carro
+        subtitle: Preencha o formulário para receber mais informações ou agendar um test drive
     car_banner:
       banner_1:
         title: Encontre o carro dos seus sonhos

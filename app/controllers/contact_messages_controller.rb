@@ -10,13 +10,19 @@ class ContactMessagesController < ApplicationController
       redirect_to root_path, notice: t(".success")
     else
       @sellers = Seller.all
-      render :new, status: :unprocessable_entity
+      
+      if params[:source] == 'cars_show' && params[:code].present?
+        @car = Car.find_by(code: params[:code])
+        render 'cars/show', status: :unprocessable_entity
+      else
+        render :new, status: :unprocessable_entity
+      end
     end
   end
 
   private
 
   def contact_message_params
-    params.require(:contact_message).permit(:name, :phone_number, :message, :seller_id)
+    params.require(:contact_message).permit(:name, :phone_number, :message, :seller_id, :code, :source)
   end
 end

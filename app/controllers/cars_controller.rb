@@ -8,6 +8,6 @@ class CarsController < ApplicationController
     @contact_message = ContactMessage.new
     @sellers = Seller.all
   rescue ActiveRecord::RecordNotFound
-    redirect_to root_path, alert: 'Carro não encontrado.'
+    redirect_to root_path, alert: t(".car_not_found")
   end
 end

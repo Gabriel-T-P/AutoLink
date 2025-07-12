@@ -52,7 +52,11 @@ end
 
 puts 'Creating cars...'
 
-test_image_path = Rails.root.join('db/seeds/sample_image_full.jpg')
+test_images_path = [
+  Rails.root.join('db/seeds/fff.png'),
+  Rails.root.join('db/seeds/sample_image_full.jpg'),
+  Rails.root.join('db/seeds/sample_2.png')
+]
 
 CarModel.all.each do |model|
   3.times do
@@ -71,7 +75,7 @@ CarModel.all.each do |model|
 
     3.times do
       car.images.attach(
-        io: File.open(test_image_path),
+        io: File.open(test_images_path.sample),
         filename: 'sample-image-full.jpg'
       )
     end

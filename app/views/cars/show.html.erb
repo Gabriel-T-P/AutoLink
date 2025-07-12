@@ -76,9 +76,9 @@
     <div class="col-lg-4 mb-4">
       <div class="card shadow-lg rounded-3 border-0 sticky" style="top: 80px;">
         <div class="card-body p-4">
-          <h4 class="card-title text-center mb-4">Interessado neste carro?</h4>
-          <p class="text-center text-muted mb-4">Preencha o formulário para receber mais informações ou agendar um test drive.</p>
-          <%= render 'contact_messages/form', contact_message: @contact_message, sellers: @sellers %>
+          <h4 class="card-title text-center mb-4"><%= t('.form.title') %>?</h4>
+          <p class="text-center text-muted mb-4"><%= t('.form.subtitle') %>.</p>
+          <%= render 'contact_messages/form', contact_message: @contact_message, sellers: @sellers, source: "cars" %>
         </div>
       </div>
     </div>

@@ -12,6 +12,12 @@
     </div>
   <% end %>
 
+  
+  <% if params[:id] %>
+    <%= hidden_field_tag :source, 'cars_show' %>
+    <%= hidden_field_tag :code, params[:id] %>
+  <% end %>
+
   <div class="mb-3">
     <%= f.label :name, class: 'form-label' %>
     <%= f.text_field :name, class: 'form-control', placeholder: t('.placeholder.name'), required: true %>

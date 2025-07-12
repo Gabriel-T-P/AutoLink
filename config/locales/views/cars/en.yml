@@ -4,7 +4,11 @@ en:
       title: New vehicles per brand
       no_cars_registered: No cars registered yet
     show:
+      car_not_found: Car not found.
       engine_subtitle: Engine and Transmission Specifications
+      form:
+        title: Interested in this car
+        subtitle: Fill out the form to receive more information or schedule a test drive
     car_banner:
       banner_1:
         title: Find the car of your dreams
