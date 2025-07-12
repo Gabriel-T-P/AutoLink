@@ -2,6 +2,7 @@ pt-BR:
   cars:
     index:
       title: Novos veículos por marca
+      no_cars_registered: Nenhum carro registrado ainda
     car_banner:
       banner_1:
         title: Encontre o carro dos seus sonhos

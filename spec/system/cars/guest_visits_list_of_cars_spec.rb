@@ -32,6 +32,12 @@ describe 'Guest visits page thats list all cars', type: :system do
     visit root_path
 
     expect(page).to have_content 'Hyundai Veloster'
-    expect(page).not_to have_content 'Hyundai Veloster'
+    expect(page).not_to have_content 'Crevrolet Onix'
+  end
+
+  it 'and has no car model registered' do
+    visit root_path
+
+    expect(page).to have_content 'No cars registered yet'
   end
 end

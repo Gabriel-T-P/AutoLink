@@ -2,22 +2,28 @@
   <%= render 'car_banner' %>
   <h1 class="mb-4 text-center"><%= t('.title') %></h1>
 
-  <% @car_models.each_with_index do |model, index| %>
-    <% cars = model.cars %>
-    <% next if cars.empty? %>
+  
+  <% if @car_models.any? %>
+    <% @car_models.each_with_index do |model, index| %>
+      <% cars = model.cars %>
+      <% next if cars.empty? %>
 
-    <h2 class="mb-3 text-center text-primary"><%= "#{model.brand} #{model.name}" %></h2>
+      <h2 class="mb-3 text-center text-primary"><%= "#{model.brand} #{model.name}" %></h2>
 
-    <div class="auto-link-horizontal-scroll-container">
-      <div class="auto-link-scroll-track d-flex flex-nowrap pb-3">
-        <% cars.each do |car| %>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 flex-shrink-0 auto-link-scroll-item">
-            <%= render car %>
-          </div>
-        <% end %>
+      <div class="auto-link-horizontal-scroll-container">
+        <div class="auto-link-scroll-track d-flex flex-nowrap pb-3">
+          <% cars.each do |car| %>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 flex-shrink-0 auto-link-scroll-item">
+              <%= render car %>
+            </div>
+          <% end %>
+        </div>
       </div>
-    </div>
 
-    <hr class="mt-5 mb-4">
+      <hr class="mt-5 mb-4">
+    <% end %>
+  <% else %>
+    <span> <%= t('.no_cars_registered') %> </span>
   <% end %>
+  
 </div>

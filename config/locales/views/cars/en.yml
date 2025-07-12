@@ -2,6 +2,7 @@ en:
   cars:
     index:
       title: New vehicles per brand
+      no_cars_registered: No cars registered yet
     car_banner:
       banner_1:
         title: Find the car of your dreams
