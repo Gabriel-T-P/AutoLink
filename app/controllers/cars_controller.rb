@@ -24,5 +24,29 @@ class CarsController < ApplicationController
                             LOWER(car_models.engine) LIKE :search_term",
                            search_term: search_term)
     end
+
+    optional_params_search_filters()
+  end
+
+  private
+
+  def optional_params_search_filters
+    if params[:min_price].present?
+      @cars = @cars.where("price >= ?", params[:min_price].to_i)
+    end
+
+    if params[:max_price].present?
+      @cars = @cars.where("price <= ?", params[:max_price].to_i)
+    end
+
+    if params[:transmission].present?
+      transmission_value = CarModel.transmissions[params[:transmission]]
+      @cars = @cars.joins(:car_model).where(car_models: { transmission: transmission_value }) if transmission_value.present?
+    end
+
+    if params[:fuel_type].present?
+      fuel_type_value = CarModel.fuel_types[params[:fuel_type]]
+      @cars = @cars.joins(:car_model).where(car_models: { fuel_type: fuel_type_value }) if fuel_type_value.present?
+    end
   end
 end

@@ -19,7 +19,7 @@ describe 'Guest search for cars', type: :system do
                     state: 'MA', license_plate: 'ABC-1234', code: 'VWGH0001', car_model: car_model_1, seller: seller)
       car_model_2 = create(:car_model, brand: 'Crevrolet', name: 'Onix', transmission: :manual, engine: '1.0', fuel_type: :flex)
       car_2 = create(:car, price: 50_000, mileage: 75_447, car_model: car_model_2)
-      
+
       visit root_path
       fill_in 'Search cars...', with: 'Volkswagen'
       find('button.btn-outline-primary').click
@@ -68,7 +68,7 @@ describe 'Guest search for cars', type: :system do
 
     it 'car category' do
       car_model_1 = create(:car_model, brand: 'Volkswagen', name: 'Golf Highline', car_category: 'Hatch')
-      car_1 = create(:car,car_model: car_model_1)
+      car_1 = create(:car, car_model: car_model_1)
       car_model_2 = create(:car_model, brand: 'Crevrolet', name: 'Onix', car_category: 'Sedan')
       car_2 = create(:car, car_model: car_model_2)
 
@@ -89,6 +89,62 @@ describe 'Guest search for cars', type: :system do
       visit root_path
       fill_in 'Search cars...', with: '1.0'
       find('button.btn-outline-primary').click
+
+      expect(page).to have_content 'Onix'
+      expect(page).not_to have_content 'Golf Highline'
+    end
+
+    it 'fuel type' do
+      car_model_1 = create(:car_model, brand: 'Volkswagen', name: 'Golf Highline', fuel_type: :gasoline)
+      car_1 = create(:car, car_model: car_model_1)
+      car_model_2 = create(:car_model, brand: 'Crevrolet', name: 'Onix', fuel_type: :flex)
+      car_2 = create(:car, car_model: car_model_2)
+
+      visit search_cars_path
+      select 'Flex', from: 'Fuel type'
+      click_on 'Search'
+
+      expect(page).to have_content 'Onix'
+      expect(page).not_to have_content 'Golf Highline'
+    end
+
+    it 'transmission' do
+      car_model_1 = create(:car_model, brand: 'Volkswagen', name: 'Golf Highline', transmission: :manual)
+      car_1 = create(:car, car_model: car_model_1)
+      car_model_2 = create(:car_model, brand: 'Crevrolet', name: 'Onix', transmission: :automatic)
+      car_2 = create(:car, car_model: car_model_2)
+
+      visit search_cars_path
+      select 'Automatic', from: 'Transmission'
+      click_on 'Search'
+
+      expect(page).to have_content 'Onix'
+      expect(page).not_to have_content 'Golf Highline'
+    end
+
+    it 'minimum price' do
+      car_model_1 = create(:car_model, brand: 'Volkswagen', name: 'Golf Highline')
+      car_1 = create(:car, price: 50_000, car_model: car_model_1)
+      car_model_2 = create(:car_model, brand: 'Crevrolet', name: 'Onix')
+      car_2 = create(:car, price: 100_000, car_model: car_model_2)
+
+      visit search_cars_path
+      fill_in 'Minimum Price (R$)', with: '60000'
+      click_on 'Search'
+
+      expect(page).to have_content 'Onix'
+      expect(page).not_to have_content 'Golf Highline'
+    end
+
+    it 'maximum price' do
+      car_model_1 = create(:car_model, brand: 'Volkswagen', name: 'Golf Highline')
+      car_1 = create(:car, price: 250_000, car_model: car_model_1)
+      car_model_2 = create(:car_model, brand: 'Crevrolet', name: 'Onix')
+      car_2 = create(:car, price: 100_000, car_model: car_model_2)
+
+      visit search_cars_path
+      fill_in 'Maximum Price (R$)', with: '150000'
+      click_on 'Search'
 
       expect(page).to have_content 'Onix'
       expect(page).not_to have_content 'Golf Highline'
