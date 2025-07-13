@@ -9,6 +9,22 @@ pt-BR:
       form:
         title: Interessado neste carro
         subtitle: Preencha o formulário para receber mais informações ou agendar um test drive
+    search:
+      title: Pesquisa Avançada de Carros
+      search_filters: Filtros de Busca
+      query: Termo de Busca
+      query_placeholder: Marca, Modelo, Motor, Categoria, Cor...
+      min_price: Preço Mínimo (R$)
+      max_price: Preço Máximo (R$)
+      any: Qualquer
+      search_button: Buscar
+      clean_filters: Limpar Filtros
+      results:
+        title: Resultados da Busca
+        count: 
+          one: "%{count} Carro Encontrado"
+          other: "%{count} Carros Encontrados"
+        no_car_found: Nenhum carro encontrado com os filtros aplicados. Tente ajustar sua busca
     car_banner:
       banner_1:
         title: Encontre o carro dos seus sonhos

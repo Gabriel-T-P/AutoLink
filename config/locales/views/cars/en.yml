@@ -9,6 +9,22 @@ en:
       form:
         title: Interested in this car
         subtitle: Fill out the form to receive more information or schedule a test drive
+    search:
+      title: Advanced Search
+      search_filters: Search Filters
+      query: Search Term
+      query_placeholder: Brand, Model, Engine, Category, Color...
+      min_price: Minimum Price (R$)
+      max_price: Maximum Price (R$)
+      any: Any
+      search_button: Search
+      clean_filters: Clean Filters
+      results:
+        title: Search Results
+        count:
+          one: "%{count} Car Found"
+          other: "%{count} Cars Found"
+        no_car_found: No car found with the current filter. Try ajusting your search
     car_banner:
       banner_1:
         title: Find the car of your dreams

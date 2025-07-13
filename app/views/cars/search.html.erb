@@ -1,56 +1,50 @@
 <div class="container py-4">
-  <h1 class="mb-4 text-center text-primary">Pesquisa Avançada de Carros</h1>
+  <h1 class="mb-4 text-center text-primary"><%= t('.title') %></h1>
 
   <div class="card shadow-lg rounded-4 border-0 mb-5 bg-light">
     <div class="card-body p-4 p-md-5">
       <h3 class="mb-4 text-center text-primary fw-bold">
-        <i class="bi bi-funnel-fill me-2"></i>Filtros de Busca
+        <i class="bi bi-funnel-fill me-2"></i><%= t('.search_filters') %>
       </h3>
 
       <%= form_tag search_cars_path, method: :get, class: 'mb-4' do %>
         <div class="row g-4">
 
-          <!-- Campo de busca geral -->
           <div class="col-md-6">
-            <%= label_tag :query, 'Termo de Busca', class: 'form-label fw-semibold' %>
+            <%= label_tag :query, t('.query'), class: 'form-label fw-semibold' %>
             <div class="input-group shadow-sm">
               <span class="input-group-text"><i class="bi bi-search"></i></span>
-              <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Marca, Modelo, Código, Cidade, Cor...' %>
+              <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: t('.query_placeholder') %>
             </div>
           </div>
 
-          <!-- Preço Mínimo -->
           <div class="col-md-3">
-            <%= label_tag :min_price, 'Preço Mínimo (R$)', class: 'form-label fw-semibold' %>
-            <%= number_field_tag :min_price, params[:min_price], class: 'form-control shadow-sm', placeholder: 'Ex: 20000', min: 0 %>
+            <%= label_tag :min_price, t('.min_price'), class: 'form-label fw-semibold' %>
+            <%= number_field_tag :min_price, params[:min_price], class: 'form-control shadow-sm', min: 0 %>
           </div>
 
-          <!-- Preço Máximo -->
           <div class="col-md-3">
-            <%= label_tag :max_price, 'Preço Máximo (R$)', class: 'form-label fw-semibold' %>
-            <%= number_field_tag :max_price, params[:max_price], class: 'form-control shadow-sm', placeholder: 'Ex: 100000', min: 0 %>
+            <%= label_tag :max_price, t('.max_price'), class: 'form-label fw-semibold' %>
+            <%= number_field_tag :max_price, params[:max_price], class: 'form-control shadow-sm', min: 0 %>
           </div>
 
-          <!-- Transmissão -->
           <div class="col-md-4">
-            <%= label_tag :transmission, 'Transmissão', class: 'form-label fw-semibold' %>
-            <%= select_tag :transmission, options_for_select(CarModel.transmissions.keys.map { |k| [CarModel.human_enum_name(:transmission, k), k] }, params[:transmission]), { prompt: 'Qualquer', class: 'form-select shadow-sm' } %>
+            <%= label_tag :transmission, CarModel.human_attribute_name(:transmission), class: 'form-label fw-semibold' %>
+            <%= select_tag :transmission, options_for_select(CarModel.transmissions.keys.map { |k| [CarModel.human_enum_name(:transmission, k), k] }, params[:transmission]), { prompt: t('.any'), class: 'form-select shadow-sm' } %>
           </div>
 
-          <!-- Combustível -->
           <div class="col-md-4">
-            <%= label_tag :fuel_type, 'Combustível', class: 'form-label fw-semibold' %>
-            <%= select_tag :fuel_type, options_for_select(CarModel.fuel_types.keys.map { |k| [CarModel.human_enum_name(:fuel_type, k), k] }, params[:fuel_type]), { prompt: 'Qualquer', class: 'form-select shadow-sm' } %>
+            <%= label_tag :fuel_type, CarModel.human_attribute_name(:fuel_type), class: 'form-label fw-semibold' %>
+            <%= select_tag :fuel_type, options_for_select(CarModel.fuel_types.keys.map { |k| [CarModel.human_enum_name(:fuel_type, k), k] }, params[:fuel_type]), { prompt: t('.any'), class: 'form-select shadow-sm' } %>
           </div>
 
-          <!-- Botões -->
           <div class="col-12 d-flex justify-content-end gap-3 mt-3">
             <%= button_tag(type: :submit, class: 'btn btn-primary btn-lg px-4') do %>
-              <i class="bi bi-search me-1"></i> Buscar
+              <i class="bi bi-search me-1"></i> <%= t('.search_button') %>
             <% end %>
 
             <%= link_to search_cars_path, class: 'btn btn-outline-secondary btn-lg px-4' do %>
-              <i class="bi bi-x-circle me-1"></i> Limpar Filtros
+              <i class="bi bi-x-circle me-1"></i> <%= t('.clean_filters') %>
             <% end %>
           </div>
         </div>
@@ -62,9 +56,9 @@
   <hr class="my-5">
 
   <h2 class="mb-5 text-center text-primary fw-bold">
-    Resultados da Busca
+    <%= t('.results.title') %>
     <small class="text-muted fw-normal d-block mt-1">
-      <%= pluralize(@cars.count, "carro encontrado", "carros encontrados") %>
+      <%= t('.results.count', count: @cars.count) %>
     </small>
   </h2>
 
@@ -79,7 +73,7 @@
   <% else %>
     <div class="alert alert-info text-center mt-4" role="alert">
       <i class="bi bi-exclamation-circle me-1"></i>
-      Nenhum carro encontrado com os filtros aplicados. Tente ajustar sua busca.
+      <%= t('.results.no_car_found') %>.
     </div>
   <% end %>
 

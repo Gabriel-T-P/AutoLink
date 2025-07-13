@@ -94,4 +94,12 @@ describe 'Guest search for cars', type: :system do
       expect(page).not_to have_content 'Golf Highline'
     end
   end
+
+  it 'and returns no car' do
+    visit root_path
+    fill_in 'Search cars...', with: '1.0'
+    find('button.btn-outline-primary').click
+
+    expect(page).to have_content 'No car found with the current filter. Try ajusting your search'
+  end
 end
