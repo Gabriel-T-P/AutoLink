@@ -1,10 +1,10 @@
 <div class="card auto-link-car-card h-100">
   <% if car.images.attached? %>
-    <%= link_to car_path(car.code) do %>
+    <%= link_to car_path(car.code), data: { turbo_frame: "_top" } do %>
       <%= image_tag car.images.first, class: "card-img-top auto-link-car-image", alt: car.code %>
     <% end %>
   <% else %>
-    <%= link_to car_path(car.code) do %>
+    <%= link_to car_path(car.code), data: { turbo_frame: "_top" } do %>
       <%= image_tag "AutoLink_Logo_2.png", class: "card-img-top auto-link-car-image", alt: car.code %>
     <% end %>
   <% end %>
