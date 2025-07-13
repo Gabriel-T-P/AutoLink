@@ -129,3 +129,9 @@ Para a estilização do aplicativo, o Bootstrap foi a escolha inicial, priorizan
 Uma vantagem importante do Bootstrap para este projeto é o carrossel de imagens (utilizado na página de detalhes do carro). Diferentemente do Tailwind CSS, onde um carrossel exigiria a implementação manual da lógica via Stimulus (ou JavaScript puro), o Bootstrap já oferece uma solução pronta para uso.
 
 Embora o Bootstrap tenha sido a escolha para acelerar o processo inicial, eu costumo usar o Tailwind que oferece maior flexibilidade para criar uma identidade visual única e personalizada. Se houvesse mais tempo e um foco maior em design de UI/UX customizado, o Tailwind seria a escolha preferencial para atingir uma "personalidade" visual mais distinta.
+
+---
+
+### 6. Deploy do app
+
+Infelismente eu não consegui criar um acesso online do site criado, as principais ferramentas de deploy atualmente para Ruby on Rails são pagas e eu acabei que não encontrei alguma que fosse grátis. Dessa forma eu não vou conseguir disponibilizar um link para acesso rápido ao resultado final do app.
