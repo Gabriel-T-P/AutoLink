@@ -1,0 +1,50 @@
+<div class="card shadow-lg rounded-4 border-0 mb-5 bg-light">
+    <div class="card-body p-4 p-md-5">
+      <h3 class="mb-4 text-center text-primary fw-bold">
+        <i class="bi bi-funnel-fill me-2"></i><%= t('.search_filters') %>
+      </h3>
+
+      <%= form_with url: search_cars_path, method: :get, local: false, data: { turbo_frame: 'car_results' }, class: 'mb-4' do %>
+        <div class="row g-4">
+
+          <div class="col-md-6">
+            <%= label_tag :query, t('.query'), class: 'form-label fw-semibold' %>
+            <div class="input-group shadow-sm">
+              <span class="input-group-text"><i class="bi bi-search"></i></span>
+              <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: t('.query_placeholder') %>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <%= label_tag :min_price, t('.min_price'), class: 'form-label fw-semibold' %>
+            <%= number_field_tag :min_price, params[:min_price], class: 'form-control shadow-sm', min: 0 %>
+          </div>
+
+          <div class="col-md-3">
+            <%= label_tag :max_price, t('.max_price'), class: 'form-label fw-semibold' %>
+            <%= number_field_tag :max_price, params[:max_price], class: 'form-control shadow-sm', min: 0 %>
+          </div>
+
+          <div class="col-md-4">
+            <%= label_tag :transmission, CarModel.human_attribute_name(:transmission), class: 'form-label fw-semibold' %>
+            <%= select_tag :transmission, options_for_select(CarModel.transmissions.keys.map { |k| [CarModel.human_enum_name(:transmission, k), k] }, params[:transmission]), { prompt: t('.any'), class: 'form-select shadow-sm' } %>
+          </div>
+
+          <div class="col-md-4">
+            <%= label_tag :fuel_type, CarModel.human_attribute_name(:fuel_type), class: 'form-label fw-semibold' %>
+            <%= select_tag :fuel_type, options_for_select(CarModel.fuel_types.keys.map { |k| [CarModel.human_enum_name(:fuel_type, k), k] }, params[:fuel_type]), { prompt: t('.any'), class: 'form-select shadow-sm' } %>
+          </div>
+
+          <div class="col-12 d-flex justify-content-end gap-3 mt-3">
+            <%= button_tag(type: :submit, class: 'btn btn-primary btn-lg px-4') do %>
+              <i class="bi bi-search me-1"></i> <%= t('.search_button') %>
+            <% end %>
+
+            <%= link_to search_cars_path, class: 'btn btn-outline-secondary btn-lg px-4', data: { turbo_frame: "car_results" } do %>
+              <i class="bi bi-x-circle me-1"></i> <%= t('.clean_filters') %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>

@@ -11,6 +11,13 @@ en:
         subtitle: Fill out the form to receive more information or schedule a test drive
     search:
       title: Advanced Search
+      results:
+        title: Search Results
+        count:
+          one: "%{count} Car Found"
+          other: "%{count} Cars Found"
+        no_car_found: No car found with the current filter. Try ajusting your search
+    filters:
       search_filters: Search Filters
       query: Search Term
       query_placeholder: Brand, Model, Engine, Category, Color...
@@ -19,12 +26,6 @@ en:
       any: Any
       search_button: Search
       clean_filters: Clean Filters
-      results:
-        title: Search Results
-        count:
-          one: "%{count} Car Found"
-          other: "%{count} Cars Found"
-        no_car_found: No car found with the current filter. Try ajusting your search
     car_banner:
       banner_1:
         title: Find the car of your dreams
