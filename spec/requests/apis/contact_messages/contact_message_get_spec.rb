@@ -29,4 +29,13 @@ describe 'ContactMessagesControllerIndex', type: :request do
     expect(json_response[1]['message']).to eq other_message.message
     expect(json_response[1]['seller_id']).to eq seller_2.id
   end
+
+  it 'and there is no message to be returned' do
+    get api_v1_contact_messages_path
+
+    expect(response).to have_http_status(200)
+    expect(response.content_type).to include 'application/json'
+    json_response = JSON.parse(response.body)
+    expect(json_response['result']).to eq 'There is no contact messages registered'
+  end
 end
