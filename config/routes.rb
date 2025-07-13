@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   namespace "api" do
     namespace "v1" do
       resources :contact_messages, only: [ :index, :show ]
+      resources :sellers, only: [ :index ]
     end
   end
 end

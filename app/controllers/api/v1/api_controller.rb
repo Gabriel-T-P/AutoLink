@@ -4,6 +4,6 @@ class Api::V1::ApiController < ActionController::API
   private
 
   def not_found_error_404
-    return render status: 404, json: {result: 'No contact message was found with the given id'}
+    render status: 404, json: { result: "No contact message was found with the given id" }
   end
 end

@@ -14,7 +14,7 @@ class Api::V1::ContactMessagesController < Api::V1::ApiController
 
     render status: :ok, json: {
       seller: @contact_message.seller,
-      message: @contact_message.as_json(except: [ :seller_id ]),
+      message: @contact_message.as_json(except: [ :seller_id ])
     }
   end
 end

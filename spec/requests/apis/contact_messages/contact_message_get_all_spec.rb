@@ -9,7 +9,7 @@ describe 'ContactMessagesControllerIndex', type: :request do
 
   it 'should return all contact messages' do
     seller_1 = create(:seller, name: 'Seller 1')
-    seller_2 = create(:seller, name: 'Seller 1')
+    seller_2 = create(:seller, name: 'Seller 2')
     message = create(:contact_message, name: 'André', phone_number: '99 999999999',
                     message: 'i want car number 10', seller: seller_1)
     other_message = create(:contact_message, name: 'Júnior', phone_number: '11 111111111',
