@@ -18,4 +18,10 @@ Rails.application.routes.draw do
     end
     resources :contact_messages, only: [ :new, :create ]
   end
+
+  namespace 'api' do
+    namespace 'v1' do
+      resources :contact_messages, only: [:index]
+    end  
+  end
 end
