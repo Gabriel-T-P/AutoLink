@@ -10,5 +10,11 @@ class Api::V1::ContactMessagesController < Api::V1::ApiController
   end
 
   def show
+    @contact_message = ContactMessage.find(params[:id])
+
+    render status: :ok, json: {
+      seller: @contact_message.seller,
+      message: @contact_message.as_json(except: [ :seller_id ]),
+    }
   end
 end
