@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   localized do
     root to: "cars#index"
 
-    resources :cars, only: [ :index, :show ]
+    resources :cars, only: [ :index, :show ] do
+      get :search, on: :collection
+    end
     resources :contact_messages, only: [ :new, :create ]
   end
 end

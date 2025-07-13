@@ -10,10 +10,10 @@ class ContactMessagesController < ApplicationController
       redirect_to root_path, notice: t(".success")
     else
       @sellers = Seller.all
-      
-      if params[:source] == 'cars_show' && params[:code].present?
+
+      if params[:source] == "cars_show" && params[:code].present?
         @car = Car.find_by(code: params[:code])
-        render 'cars/show', status: :unprocessable_entity
+        render "cars/show", status: :unprocessable_entity
       else
         render :new, status: :unprocessable_entity
       end

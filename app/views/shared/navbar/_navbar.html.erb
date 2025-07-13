@@ -27,6 +27,15 @@
         </li>
       </ul>
 
+      <%= form_tag search_cars_path, method: :get, class: "d-flex ms-lg-auto me-lg-3" do %>
+        <div class="input-group">
+          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: t('.search_cars'), aria_label: "Buscar carros" %>
+          <button class="btn btn-outline-primary" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      <% end %>
+
       <ul class="navbar-nav align-items-center gap-2">
         <li class="nav-item dropdown">
           <%= render 'shared/navbar/language_button' %>

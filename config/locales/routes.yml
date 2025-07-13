@@ -2,3 +2,4 @@ pt-BR:
   routes:
     cars: carros
     contact_messages: mensagens
+    search: procurar

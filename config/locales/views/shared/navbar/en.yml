@@ -4,5 +4,6 @@ en:
       navbar:
         cars: Cars
         message_us: Message Us
+        search_cars: Search cars...
       contact_us_button:
         talk_to_seller: Sellers

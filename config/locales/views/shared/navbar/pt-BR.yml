@@ -4,5 +4,6 @@ pt-BR:
       navbar:
         cars: Carros
         message_us: Fale Conosco
+        search_cars: Buscar carros...
       contact_us_button:
         talk_to_seller: Vendedores
