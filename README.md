@@ -5,7 +5,7 @@ O **AutoLink** é uma aplicação web desenvolvida em Ruby on Rails 8, projetada
 Este projeto utiliza:
 * **Ruby 3.4.2**
 * **Rails 8.0.2**
-* **SQLite3** como banco de dados (para desenvolvimento e testes locais)
+* **SQLite3**
 * **Bootstrap 5** para estilização e responsividade, gerenciado via `cssbundling-rails`
 * **Hotwire (Turbo e Stimulus)** para uma experiência de usuário rápida e interativa.
 
@@ -38,8 +38,8 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone git@github.com:Gabriel-T-P/ClicAuto.git
-    cd clicauto
+    git clone git@github.com:Gabriel-T-P/AutoLink.git
+    cd AutoLink
     ```
 
 2.  **Instale as dependências do Ruby:**
